@@ -1,10 +1,11 @@
 import React from "react";
 import styles from "./Login.module.css";
+import LoginContainer from "../../Components/LoginContainer/LoginContainer";
 
 const Login = () => {
   return (
     <div className={styles.loginPage}>
-      <h1>Login Sayfası</h1>
+      <LoginContainer />
     </div>
   );
 };
