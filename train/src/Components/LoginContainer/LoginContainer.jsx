@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./LoginContainer.css"; 
 
 const LoginContainer = () => {
   const [formData, setFormData] = useState({
@@ -18,8 +19,8 @@ const LoginContainer = () => {
   };
 
   return (
-    <div style={{ maxWidth: "300px", margin: "0 auto", padding: "20px" }}>
-      <h2>LOGİN</h2>
+    <div className="login-container">
+      <h2>LOGIN</h2>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -27,7 +28,7 @@ const LoginContainer = () => {
           placeholder="User Name"
           value={formData.username}
           onChange={handleChange}
-          style={{ display: "block", marginBottom: "10px", width: "100%" }}
+          className="login-input"
         />
         <input
           type="password"
@@ -35,10 +36,10 @@ const LoginContainer = () => {
           placeholder="Password"
           value={formData.password}
           onChange={handleChange}
-          style={{ display: "block", marginBottom: "10px", width: "100%" }}
+          className="login-input"
         />
-        <button type="submit" style={{ width: "100%" }}>
-          login
+        <button type="submit" className="login-button">
+          Login
         </button>
       </form>
     </div>
@@ -46,3 +47,5 @@ const LoginContainer = () => {
 };
 
 export default LoginContainer;
+
+
