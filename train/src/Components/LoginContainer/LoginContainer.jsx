@@ -1,7 +1,10 @@
 import React, { useState } from "react";
-import "./LoginContainer.css"; 
+import "./LoginContainer.module.css"; 
+import { useNavigate } from "react-router-dom";
 
 const LoginContainer = () => {
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     username: "",
     password: "",
@@ -15,7 +18,11 @@ const LoginContainer = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Giriş bilgileri:", formData);
-    // Daha sonra yönlendirme buraya eklenecek
+    if (formData.username === "admin" && formData.password === "1234") {
+      navigate("/home");
+    } else {
+      alert("Kullanıcı adı veya şifre hatalı!");
+    }
   };
 
   return (
